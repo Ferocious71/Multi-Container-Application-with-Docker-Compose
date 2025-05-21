@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:5000"   # External Port 80 → Internal Port 5000
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine"
