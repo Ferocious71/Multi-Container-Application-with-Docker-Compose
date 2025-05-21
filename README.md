@@ -11,3 +11,27 @@
 5.	Test the Application:
 -	Run docker-compose up to start both containers.
 -	Access http://localhost in your browser and verify that the visit counter increments on page refresh.
+
+  🔧 Prerequisites -
+
+  # For Docker
+sudo apt update && sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# For Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" \
+-o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Test the Application
+sudo docker-compose up -d
+
+- Mapping the internal port 5000 (Flask app) to the external port 80 means you can simply access your app via http://<public-ip> instead of http://<public-ip>:5000.
+
+- sudo docker-compose up -d --build
+
+![image](https://github.com/user-attachments/assets/033e3d1e-c253-4400-94be-44da2c52e13e)
+
+
+
